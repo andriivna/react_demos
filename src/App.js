@@ -1,6 +1,7 @@
 import './App.css';
 import Simpsons from "./components/Simpsons";
 import Characters from "./components/Characters";
+import CharacterFull from "./components/CharacterFull";
 
 
 
@@ -47,7 +48,7 @@ function App(){
                 />
             </div>
 
-        </div>
+            <div className='wrap'>
             <div className='top'>
                 <h1>Characters</h1>
             </div>
@@ -111,18 +112,17 @@ function App(){
                         itemGender={'Male'}
                         pic={'https://rickandmortyapi.com/api/character/avatar/587.jpeg'}/>
                 </div>
-
-
+            </div>
             </div>
 
-            <div className='all'>
-                <Characters/>
+             <div className='Third Task'>
+                 <h1 className='top'>All Characters</h1>
+             <div className='all'>
+                 <CharacterFull/>
+             </div>
 
-            </div>
-
-
-
-
+             </div>
+        </div>
         </div>
     )
 }

@@ -1,18 +1,18 @@
+import React from "react";
 
-import Character from './Characters';
+let Character = (props) => {
+    let {item:user} = props;
 
-function Characters(){
-    let [characters, setCharacters] = useState([]);
-    fetch('https://rickandmortyapi.com/api/character')
-        .then(value => value.json())
-        .then(value => (
-            setCharacters(value.results)
-        ));
+    return (
+        <div className={'userContainer'}>
+            <h2>{user.id} {user.name}</h2>
+            <h2>{user.status}</h2>
+            <p>{user.species}</p>
+            <p>{user.gender}</p>
 
-    return(<div>
-        {characters.map((character,index) =>(<Character item = {character.results} key={index}/>))}
-    </div>)
-}
+            <img src={user.image} alt={user.name}/>
+        </div>
+    );
+};
 
-export default Characters
-
+export default Character;
