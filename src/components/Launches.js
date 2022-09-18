@@ -1,14 +1,24 @@
-import {useState} from "react";
+import React from "react";
+import {useState, useEffect} from "react";
+import axios from 'axios';
 import Launch from "./Launch";
+
+const baseUrl = 'https://api.spacexdata.com/v3/launches';
 
 function Launches(){
     let [launches, setLaunches] = useState([]);
-    fetch('https://api.spacexdata.com/v3/launches')
-        .then(response => response.json())
-        .then(data => (
-            setLaunches(data)
 
-        ));
+    React.useEffect(() => {
+        axios.get(baseUrl).then((response) => {
+            setLaunches(response.data);
+        });
+    },[]);
+    // fetch('https://api.spacexdata.com/v3/launches')
+    //     .then(response => response.json())
+    //     .then(data => (
+    //         setLaunches(data)
+    //
+    //     ));
 
     return(
         <div className={'styles'}>{
