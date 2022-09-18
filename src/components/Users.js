@@ -1,5 +1,7 @@
-import {useEffect, useState} from "react";
+import React from "react";
+import {useState, useEffect} from "react";
 import User from "./User";
+import axios from "axios";
 
 function Users (){
     let [users, setUsers] = useState([]);
@@ -11,13 +13,21 @@ function Users (){
         setUser(id);
     }
 
-    useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(data => (
-                setUsers(data)
-            ));
-    })
+    // useEffect(()=>{
+    //     fetch('https://jsonplaceholder.typicode.com/users')
+    //         .then(response => response.json())
+    //         .then(data => (
+    //             setUsers(data)
+    //         ));
+    // })
+
+    const baseUrl = 'https://jsonplaceholder.typicode.com/users';
+
+    React.useEffect(() => {
+        axios.get(baseUrl).then((response) => {
+            setUsers(response.data);
+        });
+    }, []);
 
     return (<div className={'styles'}>
 
