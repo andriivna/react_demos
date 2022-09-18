@@ -1,11 +1,27 @@
 
 
-.container{
-    background: darksalmon;
-    width: 20%;
-    border-radius: 15px;
+/*.userContainer{*/
+/*    background: darksalmon;*/
+/*    border-radius: 15px;*/
+/*    text-align: center;*/
+/*    margin-top: 15px;*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+.userContainer{
+    border: 1px solid black;
+    margin: 20px;
+    background: #6ec3c5;
+    color: #177e83;
+
+}
+
+.styles{
+    background: cadetblue;
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
-    margin-top: 15px;
 }
 
 .container{

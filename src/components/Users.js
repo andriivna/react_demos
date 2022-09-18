@@ -19,7 +19,7 @@ function Users (){
             ));
     })
 
-    return (<div>
+    return (<div className={'styles'}>
 
             <hr/>
             <h3 className='popup'>{user?.username + ' --- ' + user?.email}</h3>
