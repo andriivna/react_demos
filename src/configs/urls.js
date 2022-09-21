@@ -1,7 +1,7 @@
-const baseURL = "http://jsonplaceholder.typicode.com/Users/users"
+const baseURL = "http://jsonplaceholder.typicode.com/Comments/comments"
 
 const urls = {
-    users:'/users'
+    users:'/comments'
 }
 
 export {

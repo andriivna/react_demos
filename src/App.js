@@ -1,10 +1,10 @@
-import {Users} from "./components";
+import {Comments} from "./components";
 
 function App() {
 
     return (
         <div>
-            <Users/>
+            <Comments/>
         </div>
     );
 
