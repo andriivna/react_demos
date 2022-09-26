@@ -1,10 +1,12 @@
 import {Link} from "react-router-dom";
 
+import css from '../Styles/todos.module.css'
+
 let Comments = (props) => {
     let {item} = props;
 
     return (
-        <div>
+        <div className={css.main}>
 
             <p>ID:{item?.id}</p>
             <p>Name:{item.name}</p>

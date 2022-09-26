@@ -1,0 +1,28 @@
+.main{
+    background: purple;
+    margin: 10px;
+    width: 20%;
+    border: 1px solid white;
+   color: white;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.full{
+    background: wheat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.header{
+    background: wheat;
+    color: purple;
+    text-align: center;
+}
+
+.link{
+    color: white;
+}

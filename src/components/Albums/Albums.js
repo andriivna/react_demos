@@ -1,7 +1,9 @@
+import css from '../Styles/todos.module.css';
+
 let Albums = (props) => {
     let {item} = props;
     return (
-        <div>
+        <div className={css.main}>
             <p>ID:{item?.id}</p>
             <p>Title:{item.title}</p>
         </div>

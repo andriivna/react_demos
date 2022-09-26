@@ -1,6 +1,8 @@
-import ApiServices from "../services/api.services";
 import {useEffect, useState} from "react";
+
+import ApiServices from "../../services/api.services";
 import Comments from "./Comments";
+import css from '../Styles/todos.module.css'
 
 
 export default function Comment(){
@@ -11,7 +13,7 @@ export default function Comment(){
         apiService.getAllData().then(value => setComments(value));
     }, []);
     return(
-        <div>
+        <div className={css.full}>
             {
                 comments.map(value =><Comments item ={value} key = {value.id}/>)
             }

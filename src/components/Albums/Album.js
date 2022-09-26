@@ -1,6 +1,8 @@
-import ApiServices from "../services/api.services";
 import {useEffect, useState} from "react";
+
+import ApiServices from "../../services/api.services";
 import Albums from "./Albums";
+import css from "../Styles/todos.module.css"
 
 
 export default function Album(){
@@ -11,7 +13,7 @@ export default function Album(){
         apiService.getAllData().then(value => setAlbums(value));
     }, []);
     return(
-        <div>
+        <div className={css.full}>
             {
                 albums.map(value =><Albums item ={value} key = {value.id}/>)
             }

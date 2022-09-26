@@ -1,6 +1,8 @@
-import ApiServices from "../services/api.services";
 import {useEffect, useState} from "react";
+
+import ApiServices from "../../services/api.services";
 import ToDos from "./ToDos";
+import css from "../Styles/todos.module.css"
 
 
 export default function ToDo(){
@@ -11,7 +13,7 @@ export default function ToDo(){
         apiService.getAllData().then(value => settodos(value));
     }, []);
     return(
-        <div>
+        <div className={css.full}>
         {
             todos.map(value =><ToDos item ={value} key = {value.id}/>)
         }
