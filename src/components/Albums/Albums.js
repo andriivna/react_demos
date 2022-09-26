@@ -1,14 +1,19 @@
-import css from '../Styles/todos.module.css';
+import {useEffect, useState} from "react";
+import {AlbumsService} from "../../services";
+import {Album} from "../Album/Album";
 
-let Albums = (props) => {
-    let {item} = props;
-    return (
-        <div className={css.main}>
-            <p>ID:{item?.id}</p>
-            <p>Title:{item.title}</p>
+const Albums =()=>{
+    const [albums, setAlbums] = useState([]);
+
+    useEffect(()=>{
+        AlbumsService.getAll().then(({data})=> setAlbums(data))
+    },[])
+    return(
+        <div>
+            {
+                albums.map(album => <Album key ={album.id} album ={album}/>)
+            }
         </div>
-    );
-
-};
-
-export default Albums;
+    )
+}
+export {Albums};

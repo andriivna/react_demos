@@ -1,18 +1,22 @@
-import css from '../Styles/todos.module.css'
+import {useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {PostsService} from "../../services";
+import {Post} from "../Post/Post";
 
-let Posts = (props) => {
-    let {item} = props;
+const Posts =()=>{
 
-    return (
-        <div className={css.main}>
+    const {postId} = useParams();
 
-            <p>ID:{item?.id}</p>
-            <p>Title:{item.title}</p>
+    const [post, setPost] = useState(null);
 
+    useEffect(()=>{
+        PostsService.getAll(postId).then(({data}) => setPost(data))
+    },[postId])
 
+    return(
+        <div>
+            {post && (<Post post={post}/>)}
         </div>
-    );
-
-};
-
-export default Posts;
+    )
+}
+export {Posts};

@@ -1,21 +1,22 @@
-import {Link} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {CommentsService} from "../../services";
+import {Comment} from "../Comment/Comment";
 
-import css from '../Styles/todos.module.css'
+const Comments =()=>{
 
-let Comments = (props) => {
-    let {item} = props;
+    const [comments, setComments] = useState([]);
 
-    return (
-        <div className={css.main}>
-
-            <p>ID:{item?.id}</p>
-            <p>Name:{item.name}</p>
-            <Link to ={`/posts/${item.id}`}>Details</Link>
+    useEffect(()=>{
+        CommentsService.getAll().then(({data}) => setComments(data));
+    },[])
+    return(
+        <div>
+            {
+                comments.map(comment =><Comment key ={comment.id} comment = {comment}/>)
+            }
 
 
         </div>
-    );
-
-};
-
-export default Comments;
+    )
+}
+export {Comments};
