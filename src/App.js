@@ -1,11 +1,21 @@
-import {Count1, Count2} from "./components";
+import {Routes, Route, Navigate} from "react-router-dom";
+import {MainLayout} from "./layouts";
+import {LoginPage, RegisterPage} from "./pages";
+import {CarsPage} from "./pages/CarsPage/CarsPage";
+
+
 
 function App(){
     return(
         <div>
-            <Count1/>
-            <hr/>
-            <Count2/>
+        <Routes>
+            <Route path={'/'} element ={<MainLayout/>}>
+                <Route index element={<Navigate to={'/register'}/>}/>
+                <Route path={'/login'} element={<LoginPage/>}/>
+                <Route path={'/register'} element={<RegisterPage/>}/>
+                <Route path={'/cars'} element ={<CarsPage/>}/>
+            </Route>
+        </Routes>
         </div>
     )
 }
