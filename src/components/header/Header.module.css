@@ -1,0 +1,8 @@
+.Header{
+    display: flex;
+    justify-content: flex-end;
+  background-color: wheat;
+    color: purple;
+    font-size: 25px;
+    height: 50px;
+}
