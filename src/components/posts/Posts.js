@@ -3,6 +3,7 @@ import {useEffect} from "react";
 
 import {postActions} from "../../redux";
 import {Post} from "../post/Post";
+import css from '../post/post.module.css';
 
 const Posts =()=>{
     const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const Posts =()=>{
         dispatch(postActions.getAll())
     },[])
     return(
-        <div>
+        <div className={css.bodyp}>
             {loading&&<h1>Loading.........</h1>}
             {error&& <h1>Error</h1>}
             {

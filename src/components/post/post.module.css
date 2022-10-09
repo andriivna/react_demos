@@ -1,0 +1,12 @@
+.post{
+    background: purple;
+    color: wheat;
+    border: 1px solid wheat;
+    width: 45%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bodyp{
+    margin-left: 33%;
+}

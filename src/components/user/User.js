@@ -1,12 +1,13 @@
 import {useDispatch} from "react-redux";
 
 import {userActions} from "../../redux";
+import css from './user.module.css'
 
 const User =({user})=>{
     const {id, name, username, email} = user;
     const dispatch = useDispatch();
     return(
-        <div>
+        <div className={css.user}>
             <div>id:{id}</div>
             <div>name:{name}</div>
             <div>username:{username}</div>

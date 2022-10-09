@@ -1,0 +1,12 @@
+.user{
+    background: wheat;
+    color: purple;
+    border: 1px solid purple;
+    width: 45%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bodyu{
+    margin-left: 33%;
+}

@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import {userService} from "../../services";
 import {userActions} from "../../redux";
 import {User} from "../user/User";
+import css from '../user/user.module.css'
 
 const Users =()=>{
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const Users =()=>{
         // userService.getAll().then(({data})=>dispatch(userActions.getAll(data)))
     },[])
     return(
-        <div>
+        <div className={css.bodyu}>
             {loading&&<h1>Loading.........</h1>}
             {error&& <h1>Error</h1>}
             {userFromAPI&&userFromAPI.email}
