@@ -1,14 +1,24 @@
-const Car =({car})=>{
+import {carService} from "../../services/car.service";
 
-    const {id, model, price, year, photo} = car;
+const Car =({car, setCars})=>{
+
+    const {id, model, price, year} = car;
     return(
+
         <div>
-            <div>id:{id}</div>
-            <div>model:{model}</div>
-            <div>price:{price}</div>
-            <div>year:{year}</div>
-            <div>photo:{photo}</div>
+            <div>
+                <div>id:{id}</div>
+                <div>model:{model}</div>
+                <div>price:{price}</div>
+                <div>year:{year}</div>
+            </div>
+
+            <div>
+                <button>Update</button>
+            </div>
+
         </div>
+
     )
 }
 

@@ -14,7 +14,7 @@ const CarsPage=()=>{
         )}, [])
     return(
         <div>
-            <CarForm/>
+            {/*<CarForm/>*/}
             <hr/>
             <Cars cars = {cars}/>
         </div>
