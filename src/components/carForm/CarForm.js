@@ -4,7 +4,10 @@ import {useForm} from "react-hook-form";
 
 
 const CarForm=({setCars})=>{
+
+
     const {handleSubmit, register, reset, formState:{errors, isValid}, setValue} = useForm({mode: "all"});
+
     const submit = async (car) =>{
         const {data} = await carServices.create(car);
         setCars(cars =>[...cars,data])
