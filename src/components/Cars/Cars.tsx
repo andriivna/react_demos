@@ -1,21 +1,22 @@
-import {useEffect, useState} from "react";
-import {ICar} from "../interfaces";
-import {carService} from "../../sevices";
-import {Car} from "../Car/Car";
+import {useEffect} from 'react';
 
-const Cars =()=>{
+import {Car} from '../Car/Car';
+import {useAppDispatch, useAppSelector} from '../../hooks';
+import {carActions} from '../../redux';
 
-    const [cars, setCars] = useState<ICar[]>([]);
+const Cars = () => {
+    const {cars} = useAppSelector(state => state.carReducer);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-        carService.getAll().then(({data})=>setCars(data))
-    }, [])
+        dispatch(carActions.getAll())
+    }, [dispatch])
 
-    return(
+    return (
         <div>
-            {cars.map(car=><Car car={car} key ={car.id}/>)}
+            {cars.map(car => <Car car={car} key={car.id}/>)}
         </div>
-    )
-}
+    );
+};
 
-export {Cars}
+export {Cars};
