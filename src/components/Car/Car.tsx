@@ -17,7 +17,7 @@ const Car:FC<IProps> =({car})=>{
             <div>price:{price}</div>
             <div>year:{year}</div>
 
-            <button onClick={()=>navigate(`${id}`, {state:car})}></button>
+            <button onClick={()=>navigate(`${id}`, {state:car})}>Show More</button>
 
         </div>
     )
